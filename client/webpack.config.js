@@ -18,7 +18,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'Text Editor',
+        title: 'J.A.T.E',
       }),
       new MiniCssExtractPlugin(),
       new WorkboxPlugin.GenerateSW(),
