@@ -12,7 +12,6 @@ window.addEventListener('beforeinstallprompt', (event) => {
   });
 });
 
-// TODO: Add an handler for the `appinstalled` event
 window.addEventListener('appinstalled', (event) => {
   event.preventDefault();
   butInstall.setAttribute('disabled', true);
