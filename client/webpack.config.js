@@ -22,6 +22,24 @@ module.exports = () => {
       }),
       new MiniCssExtractPlugin(),
       new WorkboxPlugin.GenerateSW(),
+      new WebpackPwaManifest({
+        filename: "manifest.json",
+        name: 'jate',
+        short_name: 'jate',
+        description: 'jate',
+        orientation: 'omit',
+        start_url: './',
+        publicPath: './',
+        fingerprints: false,
+        inject: true,
+        icons: [
+          {
+            src: path.resolve('./src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            destination: path.join('./assets', 'icons')
+          }
+        ]
+      }),
       new WorkboxPlugin.InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'service-worker.js',
