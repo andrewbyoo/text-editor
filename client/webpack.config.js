@@ -21,7 +21,10 @@ module.exports = () => {
         title: 'J.A.T.E',
       }),
       new MiniCssExtractPlugin(),
-      new WorkboxPlugin.GenerateSW(),
+      new WorkboxPlugin.InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'service-worker.js',
+      }),
       new WebpackPwaManifest({
         filename: "manifest.json",
         name: 'jate',
@@ -39,10 +42,6 @@ module.exports = () => {
             destination: path.join('./assets', 'icons')
           }
         ]
-      }),
-      new WorkboxPlugin.InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
       })
     ],
 
