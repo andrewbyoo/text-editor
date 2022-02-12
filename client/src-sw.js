@@ -27,13 +27,13 @@ warmStrategyCache({
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
 registerRoute(
-  ({ request }) => request.destination === 'image',
-  new CacheFirst({
-    cacheName: 'imageCache',
+  ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
+  new StaleWhileRevalidate({
+    cacheName: 'asset-cache',
     plugins: [
       new CacheableResponsePlugin({
-        statuses: [0, 200]
-      })
-    ]
+        statuses: [0, 200],
+      }),
+    ],
   })
 );
