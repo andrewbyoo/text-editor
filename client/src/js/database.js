@@ -21,7 +21,6 @@ export const putDb = async (id, content) => {
   console.log(`Database has been update with: ${result}`);
 };
 
-// TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
   const jateDb = await openDB('jate', 1);
   const tx = jateDb.transaction('jate', 'readonly');
