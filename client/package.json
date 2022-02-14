@@ -2,7 +2,7 @@
   "name": "JATE",
   "engines": {
     "node": "17.4.0"
-  }
+  },
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack --mode production",
