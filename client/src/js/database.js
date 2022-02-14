@@ -4,11 +4,9 @@ const initdb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
-        console.log('jate database already exists');
         return;
       }
       db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
-      console.log('jate database created');
     },
   });
 
@@ -18,7 +16,6 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
   const request = store.put({ id: 1, jate: content });
   const result = await request;
-  console.log(`Database has been update with: ${result}`);
 };
 
 export const getDb = async () => {
@@ -27,7 +24,6 @@ export const getDb = async () => {
   const store = tx.objectStore('jate');
   const request = store.get(1).content;
   const result = await request;
-  console.log('result.value', result);
   return result;
 };
 
