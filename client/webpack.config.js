@@ -10,7 +10,6 @@ module.exports = () => {
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js',
-      editor: './src/js/editor.js',
     },
     output: {
       filename: '[name].bundle.js',
@@ -43,7 +42,7 @@ module.exports = () => {
             destination: path.join('./assets', 'icons')
           }
         ]
-      })
+      }),
     ],
 
     module: {
@@ -59,6 +58,7 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-transform-runtime']
             },
           },
         },
