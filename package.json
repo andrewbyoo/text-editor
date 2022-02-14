@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "17.4.0"
+  }
   "scripts": {
     "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
     "start": "npm run build && cd server && node server.js",
     "server": "cd server server.js --ignore client",
     "build": "cd client && npm run build",
-    "install": "cd client && npm i && cd .. && cd server && npm i",
+    "install": "concurrently \"cd client && npm i\" \"cd server && npm i\" ",
     "client": "cd client && npm start"
   },
   "keywords": [],
