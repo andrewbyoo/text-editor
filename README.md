@@ -27,7 +27,7 @@ As a developer, I want to create notes or code snippets with or without an inter
 ## Usage
 The visual shows the app running on the heroku deployed server.
 
-![Social Media API visual](./assets/JATE-static-visual.png)
+![Text Editor visual](./assets/JATE-static-visual.png)
 
 Please click [here](https://youtu.be/oGBPFoPZ2FQ) for a video demo.
 
